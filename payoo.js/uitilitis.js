@@ -12,7 +12,11 @@ function getTextValueById(id){
 
 function showSectionById(id){
     document.getElementById('adding-money-forms').classList.add('hidden');
+    document.getElementById('cashOut-forms').classList.add('hidden');
 
+
+
+    // show section by id!
     document.getElementById(id).classList.remove('hidden');
     
 }
