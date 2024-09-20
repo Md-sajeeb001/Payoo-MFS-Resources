@@ -48,11 +48,7 @@ document.getElementById('cashOut-money-btn').addEventListener("click", function(
 
         // transaction
         const divTag = document.createElement('div');
-        divTag.innerText = `
-           
-            <p>current Balance : ${currentBalance} tk. cash Out Amount: ${cashOut}</p>
-
-        `
+        divTag.innerText = `current Balance : ${currentBalance} tk. cash Out Amount: ${cashOut}`
         document.getElementById('transaction-form').appendChild(divTag);
 
     }
@@ -61,6 +57,50 @@ document.getElementById('cashOut-money-btn').addEventListener("click", function(
     }
 
 })
+
+// transfer Money!
+
+document.getElementById('transfer-money-btn').addEventListener('click', function(event){
+    event.preventDefault();
+
+    console.log('transfer button is clicked')
+    const userAccountNumber = getInputValueById('user-account-input-field');
+    if(userAccountNumber.length < 11){
+        alert('Invalid Input')
+    }
+    const transferAmount = getInputValueById('transfer-amount-field');
+
+    if(isNaN(transferAmount)){
+        alert('Please Provide a Valid Input');
+        return;
+    }
+    const transferpinNumber = getInputValueById('transfer-pin-number');
+
+    const currentBalance = getTextValueById('current-balance');
+    if(transferAmount > currentBalance){
+        alert('You Do Not Have Enough Money To Transfer');
+        return;
+    }
+
+    if(transferpinNumber === 1234){
+        const transfer = currentBalance - transferAmount;
+        document.getElementById('current-balance').innerText = transfer;
+
+        const transferText = document.createElement('p');
+        transferText.innerText = `current Balance : ${currentBalance} tk. transfer money : ${transfer}, to this number ${userAccountNumber}`;
+        document.getElementById('transaction-form').appendChild(transferText);
+    }
+    else{
+        alert(`Money can't transfer`)
+    }
+
+})
+
+
+
+
+
+
 
 // transaction-form section!
 
@@ -78,4 +118,8 @@ document.getElementById('addMoney-btn').addEventListener('click', function(){
 
 document.getElementById('Transactions-btn').addEventListener('click', function(){
     showSectionById('transaction-form');
+});
+
+document.getElementById('Transfer-btn').addEventListener('click', function(){
+    showSectionById('transfer-forms');
 })
