@@ -14,6 +14,11 @@ document.getElementById('add-money-btn').addEventListener('click', function(even
         const textValue = getTextValueById('current-balance');
         const addingBalance = amounNumber + textValue ;
         document.getElementById('current-balance').innerText = addingBalance;
+
+        // transaction
+        const ptag = document.createElement('p');
+        ptag.innerText = `Added Balance : ${amounNumber} tk. New Balance ${addingBalance}`;
+        document.getElementById('transaction-form').appendChild(ptag);
     }
     else{
         alert('Field Money Adding');
@@ -40,6 +45,16 @@ document.getElementById('cashOut-money-btn').addEventListener("click", function(
     if(cashOutPinNumber === 1234){
         const cashOut = currentBalance - cashOutAmount;
         document.getElementById('current-balance').innerText = cashOut;
+
+        // transaction
+        const divTag = document.createElement('div');
+        divTag.innerText = `
+           
+            <p>current Balance : ${currentBalance} tk. cash Out Amount: ${cashOut}</p>
+
+        `
+        document.getElementById('transaction-form').appendChild(divTag);
+
     }
     else{
         alert("Faield To Cash Out Money");
@@ -47,7 +62,11 @@ document.getElementById('cashOut-money-btn').addEventListener("click", function(
 
 })
 
-// cash out money!
+// transaction-form section!
+
+
+
+// cash out money event handelar!
 
 document.getElementById('cashOut-btn').addEventListener('click', function(){
     showSectionById('cashOut-forms');
@@ -55,4 +74,8 @@ document.getElementById('cashOut-btn').addEventListener('click', function(){
 
 document.getElementById('addMoney-btn').addEventListener('click', function(){
     showSectionById('adding-money-forms');
+})
+
+document.getElementById('Transactions-btn').addEventListener('click', function(){
+    showSectionById('transaction-form');
 })

@@ -13,6 +13,7 @@ function getTextValueById(id){
 function showSectionById(id){
     document.getElementById('adding-money-forms').classList.add('hidden');
     document.getElementById('cashOut-forms').classList.add('hidden');
+    document.getElementById('transaction-form').classList.add('hidden');
 
 
 

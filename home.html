@@ -18,7 +18,7 @@
             <div class="mockup-phone">
                 <div class="camera"></div>
                 <div class="display">
-                  <div class="artboard artboard-demo phone-2">
+                  <div class="artboard artboard-demo phone-3">
                     <!-- state -->
                     <div class="stats shadow">
                         <div class="stat">
@@ -35,16 +35,16 @@
                     <button id="Transfer-btn" class="btn btn-outline btn-black">Transfer Money</button>
                     <button id="getBonus-btn" class="btn btn-outline btn-black">Get Bouns</button>
                     <button id="PayBill-btn" class="btn btn-outline btn-black">Pay Bill</button>
-                    <button id="trans-btn" class="btn btn-outline btn-black">Transactions</button>
+                    <button id="Transactions-btn" class="btn btn-outline btn-black">Transactions</button>
                     </div>
                     <!-- forms 1 adding money-->
                     <div id="adding-money-forms" class=" card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                         <form class="card-body">
                           <div class="form-control">
                             <label class="label">
-                              <span class="label-text">Amount</span>
+                              <span class="label-text">Add Amount</span>
                             </label>
-                            <input id="Amount-input-field" type="text" placeholder="Your Number" class="input input-bordered" required />
+                            <input id="Amount-input-field" type="text" placeholder="Add Money " class="input input-bordered" required />
                           </div>
                           <div class="form-control">
                             <label class="label">
@@ -65,18 +65,50 @@
                             <label class="label">
                               <span class="label-text">CashOut Amount</span>
                             </label>
-                            <input id="cashout-input-field" type="text" placeholder="Your Number" class="input input-bordered" required />
+                            <input id="cashout-input-field" type="text" placeholder="Add Amount To Withdraw" class="input input-bordered" required />
                           </div>
                           <div class="form-control">
                             <label class="label">
                               <span class="label-text">4 Digit Pin</span>
                             </label>
-                            <input id="cashout-pin-number" type="text" placeholder="Enter 4 Digit Pin" class="input input-bordered" required />                         
+                            <input id="cashout-pin-number" type="text" placeholder="Enter 4 Digit Pin Number" class="input input-bordered" required />                         
                           </div>
                           <div class="form-control mt-6">
                             <button id="cashOut-money-btn" class="btn btn-primary">Cash Out</button>
                           </div>
                         </form>
+                    </div>
+
+                    <!-- forms3 transfer money -->
+                    <div id="transfer-forms" class="hidden card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+                        <form class="card-body">
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">User Amount Number</span>
+                            </label>
+                            <input id="cashout-input-field" type="text" placeholder="Enter 11 Digit Number" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">Amount</span>
+                            </label>
+                            <input id="cashout-input-field" type="text" placeholder="Enter Amount To Transfer" class="input input-bordered" required />
+                          </div>
+                          <div class="form-control">
+                            <label class="label">
+                              <span class="label-text">4 Digit Pin</span>
+                            </label>
+                            <input id="transfer-pin-number" type="text" placeholder="Enter 4 Digit Pin Number" class="input input-bordered" required />                         
+                          </div>
+                          <div class="form-control mt-6">
+                            <button id="transfer-money-btn" class="btn btn-primary">Transfer Money</button>
+                          </div>
+                        </form>
+                    </div>
+
+                    <!-- forms transaction section -->
+                    <div id="transaction-form" class="hidden transaction-container space-y-4">
+                       <h2 class="text-3xl font-bold text-center">Your transaction</h2>
                     </div>
                   </div>
                 </div>
